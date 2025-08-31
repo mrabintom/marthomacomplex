@@ -213,21 +213,21 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <form class="bg-white rounded p-4 shadow" id="enquiryForm">
+          <form class="bg-white rounded p-4 shadow" id="enquiryForm" action="https://formspree.io/f/xvgbrvze" method="POST" autocomplete="off">
             <div class="mb-3">
               <label for="enquiryName" class="form-label text-dark">Your Name</label>
-              <input type="text" class="form-control" id="enquiryName" required>
+              <input type="text" class="form-control" id="enquiryName" name="name" required>
             </div>
             <div class="mb-3">
               <label for="enquiryContact" class="form-label text-dark">Contact Number</label>
-              <input type="text" class="form-control" id="enquiryContact" required>
+              <input type="text" class="form-control" id="enquiryContact" name="contact" required>
             </div>
             <div class="mb-3">
               <label for="enquiryMessage" class="form-label text-dark">Message</label>
-              <textarea id="enquiryMessage" class="form-control" rows="3" required></textarea>
+              <textarea id="enquiryMessage" class="form-control" name="message" rows="3" required></textarea>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="requestCallback">
+              <input class="form-check-input" type="checkbox" id="requestCallback" name="callback">
               <label class="form-check-label text-dark" for="requestCallback">Request a call back</label>
             </div>
             <button type="submit" class="btn btn-primary w-100">Send Enquiry</button>
@@ -374,10 +374,29 @@
       if(enquiryForm) {
         enquiryForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          enquiryMsg.textContent = "Thank you for your enquiry! We will contact you soon.";
-          enquiryMsg.classList.remove('d-none', 'text-danger');
-          enquiryMsg.classList.add('text-success');
-          enquiryForm.reset();
+          enquiryMsg.classList.add('d-none');
+          enquiryMsg.classList.remove('text-danger', 'text-success');
+          var formData = new FormData(enquiryForm);
+          fetch(enquiryForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(function(response) {
+            if(response.ok) {
+              enquiryMsg.textContent = "Send enquiry successfully!";
+              enquiryMsg.classList.remove('d-none', 'text-danger');
+              enquiryMsg.classList.add('text-success');
+              enquiryForm.reset();
+            } else {
+              enquiryMsg.textContent = "There was a problem. Please try again.";
+              enquiryMsg.classList.remove('d-none', 'text-success');
+              enquiryMsg.classList.add('text-danger');
+            }
+          }).catch(function() {
+            enquiryMsg.textContent = "There was a problem. Please try again.";
+            enquiryMsg.classList.remove('d-none', 'text-success');
+            enquiryMsg.classList.add('text-danger');
+          });
         });
       }
     });
