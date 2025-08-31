@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Marthoma Complex - Building Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Commercial spaces for rent at Marthoma Complex, Aimury, Koovappady. Secure, well-maintained, and prime location for shops, offices, and service centers.">
+  <link rel="icon" href="img/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome & Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Bootstrap & Animation Libraries -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    /* --- Additional Professional & Responsive Styles --- */
+    .footer-contact-icons a {
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .footer-contact-icons a:hover {
+      background: #0d6efd;
+      color: #fff !important;
+      transform: scale(1.1);
+    }
+
+    .footer-contact-info p,
+    .footer-contact-info a {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact-info a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-contact-info a:hover {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .footer-newsletter input[type="email"] {
+      border-radius: 30px 0 0 30px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .footer-newsletter .btn {
+      border-radius: 0 30px 30px 0;
+    }
+
+    .footer-newsletter input[type="email"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #0d6efd33;
+    }
+
+    @media (max-width: 991.98px) {
+      .footer-contact-info,
+      .footer-newsletter,
+      .footer-links {
+        text-align: center;
+      }
+
+      .footer-contact-icons {
+        justify-content: center !important;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .footer-contact-info h4 {
+        font-size: 1.3rem;
+      }
+
+      .footer-links h5,
+      .footer-newsletter h5 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Responsive horizontal/vertical card for Occupiers */
+    .occupier-img {
+      width: 50%;
+      aspect-ratio: 2/2;
+      object-fit: cover;
+      min-width: 120px;
+      max-width: 180px;
+    }
+
+    @media (max-width: 991.98px) {
+      .card.flex-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+
+      .card.flex-row .occupier-img {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        border-radius: 0.5rem 0.5rem 0 0 !important;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .card-body h5 {
+        font-size: 1.1rem;
+      }
+
+      .card-body p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner -->
+  <div id="spinner" class="bg-white position-fixed w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+
+  <!-- Topbar -->
+  <div class="container-fluid bg-dark text-white-50 py-2 d-none d-lg-block">
+    <div class="row align-items-center">
+      <div class="col-lg-7 ps-4">
+        <small class="me-4"><i class="fa fa-phone-alt me-2"></i>9447873788</small>
+        <small><i class="far fa-envelope-open me-2"></i>
+          <a href="mailto:mrabintom@gmail.com" class="text-light text-decoration-underline">Mail us</a>
+        </small>
+      </div>
+      <div class="col-lg-5 text-end pe-4">
+        <a class="text-white-50 ms-3" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="text-white-50 ms-3" href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <h1 class="m-0"><img class="img-fluid me-3" src="img/icon/icon-02-primary.png" alt="">Marthoma Complex</h1>
+    </a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
+        <a href="index.html" class="nav-item nav-link active">Home</a>
+        <a href="about.html" class="nav-item nav-link ">About Us</a>
+        <a href="service.html" class="nav-item nav-link ">Rent Space</a>
+        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+
+  <!-- Hero Section -->
+  <div class="container-fluid p-0 mb-5">
+    <div class="row align-items-center text-center text-lg-start" style="min-height: 500px; background: url('img/carousel-1.png') center/cover no-repeat;">
+      <div class="col-lg-6 p-5 bg-white bg-opacity-75 rounded">
+        <h1 class="display-5 text-dark mb-4">Commercial Spaces for Rent at Marthoma Complex</h1>
+        <p class="fs-6 text-body mb-4">
+          Looking for a prime location to grow your business? Marthoma Complex offers modern, flexible commercial spaces in the heart of Aimury, Koovappady.
+          Current tenants include <b>Bake n Bite</b>, <b>Ann's Beauty Parlour</b>, and <b>Super Vision Highspeed Internet</b>.
+        </p>
+        <p><b>Address:</b> Marthoma Complex, Aimury, Koovappady P.O, 683544</p>
+        <a href="service.html" class="btn btn-primary px-4 py-2">See Available Spaces</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="container-xxl py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <img src="img/about.jpg" alt="About" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="mb-4">Why Choose Marthoma Complex?</h2>
+        <p class="text-primary">Secure, accessible, and well-maintained spaces for your business:</p>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-check text-primary me-2"></i> Flexible rentals for shops, offices, and service centers</li>
+          <li><i class="fa fa-check text-primary me-2"></i> 24/7 access & ample parking</li>
+          <li><i class="fa fa-check text-primary me-2"></i> Prime location in Aimury, Koovappady</li>
+          <li><i class="fa fa-check text-primary me-2"></i> Current tenants: Bake n Bite, Ann’s Beauty Parlour, Super Vision Internet</li>
+        </ul>
+        <a href="about.html" class="btn btn-outline-primary px-4">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enquiry Form -->
+  <div class="container-fluid bg-primary text-white py-5">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <h2>Enquire About Renting Space</h2>
+          <p>Fill out the enquiry form and we’ll get back to you.</p>
+          <div class="d-flex align-items-center bg-white text-primary rounded p-3">
+            <img src="img/profile.jpg" alt="Manager" class="rounded-circle me-3" style="width:50px; height:50px;">
+            <h5 class="mb-0">Call Us: 9447873788</h5>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <form class="bg-white rounded p-4 shadow" id="enquiryForm">
+            <div class="mb-3">
+              <label for="enquiryName" class="form-label text-dark">Your Name</label>
+              <input type="text" class="form-control" id="enquiryName" required>
+            </div>
+            <div class="mb-3">
+              <label for="enquiryContact" class="form-label text-dark">Contact Number</label>
+              <input type="text" class="form-control" id="enquiryContact" required>
+            </div>
+            <div class="mb-3">
+              <label for="enquiryMessage" class="form-label text-dark">Message</label>
+              <textarea id="enquiryMessage" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="requestCallback">
+              <label class="form-check-label text-dark" for="requestCallback">Request a call back</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Enquiry</button>
+            <div id="enquiryMsg" class="form-text mt-2 d-none"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Occupiers Section -->
+  <div class="container py-5">
+    <h2 class="text-center mb-5">Our Occupiers</h2>
+    <div class="row g-4">
+      <div class="col-md-4 d-flex align-items-stretch">
+        <div class="card border-0 shadow-sm flex-row flex-md-column h-100 w-100">
+          <img src="img/bakebite.jpg" alt="Bake n Bite" class="rounded-start rounded-top-md occupier-img" style="width: 50%; aspect-ratio: 2/2; object-fit: cover; min-width:120px; max-width:180px;">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h5 class="mb-1">Bake n Bite</h5>
+            <p class="mb-2 small text-muted">Bakery & food court</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-items-stretch">
+        <div class="card border-0 shadow-sm flex-row flex-md-column h-100 w-100">
+          <img src="img/anns.png" alt="Ann's Beauty Parlour" class="rounded-start rounded-top-md occupier-img" style="width: 50%; aspect-ratio: 2/2; object-fit: cover; min-width:120px; max-width:180px;">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h5 class="mb-1">Ann's Beauty Parlour</h5>
+            <p class="mb-2 small text-muted">Beauty & Wellness</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-items-stretch">
+        <div class="card border-0 shadow-sm flex-row flex-md-column h-100 w-100">
+          <img src="img/super.png" alt="Super Vision Internet" class="rounded-start rounded-top-md occupier-img" style="width: 50%; aspect-ratio: 2/2; object-fit: cover; min-width:120px; max-width:180px;">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h5 class="mb-1">Super Vision Highspeed Internet Service</h5>
+            <p class="mb-2 small text-muted">Internet and cable TV</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5">
+    <div class="container pb-4">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-5 col-md-6 footer-contact-info">
+          <h4 class="mb-3">
+            <img src="img/icon/icon-02-primary.png" alt="Logo" style="height:32px;vertical-align:middle;" class="me-2">
+            Marthoma Complex
+          </h4>
+          <p> rental spaces for classrooms, offices, and gym in the heart of Koovappady.</p>
+          <p><i class="fa fa-map-marker-alt me-2"></i> Aimury, Koovappady P.O, 683544</p>
+          <p><i class="fa fa-phone-alt me-2"></i> <a href="tel:9447873788">9447873788</a></p>
+          <p><i class="fa fa-envelope me-2"></i>
+            <a href="mailto:mrabintom@gmail.com">Mail us</a>
+          </p>
+          <div class="mt-3 d-flex footer-contact-icons">
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="index.html" class="text-light d-block py-1"><i class="fa fa-angle-right me-2"></i>Home</a></li>
+            <li><a href="about.html" class="text-light d-block py-1"><i class="fa fa-angle-right me-2"></i>About Us</a></li>
+            <li><a href="service.html" class="text-light d-block py-1"><i class="fa fa-angle-right me-2"></i>Rent Space</a></li>
+            <li><a href="contact.html" class="text-light d-block py-1"><i class="fa fa-angle-right me-2"></i>Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h5 class="mb-3">Get In Touch</h5>
+          <form id="newsletterForm" autocomplete="off">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control" id="newsletterEmail" placeholder="Your Email" aria-label="Your Email" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+            <div id="newsletterMsg" class="form-text text-success d-none"></div>
+          </form>
+          <small class="text-secondary">Subscribe for updates and offers. No spam.</small>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-3 bg-secondary mt-4">
+      &copy; 2025 <b>Marthoma Complex</b>. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="js/main.js"></script>
+  <script>
+    // --- Newsletter Subscribe Demo (No backend, just UI feedback) ---
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('newsletterForm');
+      var email = document.getElementById('newsletterEmail');
+      var msg = document.getElementById('newsletterMsg');
+      if(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if(email.value && email.value.includes('@')) {
+            msg.textContent = "Thank you for subscribing!";
+            msg.classList.remove('d-none', 'text-danger');
+            msg.classList.add('text-success');
+            email.value = '';
+          } else {
+            msg.textContent = "Please enter a valid email address.";
+            msg.classList.remove('d-none', 'text-success');
+            msg.classList.add('text-danger');
+          }
+        });
+      }
+    });
+
+    // Enquiry form feedback
+    document.addEventListener('DOMContentLoaded', function () {
+      var enquiryForm = document.getElementById('enquiryForm');
+      var enquiryMsg = document.getElementById('enquiryMsg');
+      if(enquiryForm) {
+        enquiryForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          enquiryMsg.textContent = "Thank you for your enquiry! We will contact you soon.";
+          enquiryMsg.classList.remove('d-none', 'text-danger');
+          enquiryMsg.classList.add('text-success');
+          enquiryForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
