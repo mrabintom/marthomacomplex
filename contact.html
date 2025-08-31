@@ -210,10 +210,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 headers: { 'Accept': 'application/json' }
             }).then(function (response) {
                 if (response.ok) {
-                    responseDiv.textContent = 'Thank you! Your message has been sent.';
+                    responseDiv.textContent = 'Send message successfully';
                     responseDiv.classList.add('alert', 'alert-success');
                     responseDiv.style.display = 'block';
                     form.reset();
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000); // Reload after 2 seconds
                 } else {
                     response.json().then(function (data) {
                         responseDiv.textContent = data.error || 'Oops! There was a problem submitting your form.';
