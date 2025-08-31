@@ -100,29 +100,30 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <h1 class="display-6 mb-5">If You Have Any Query, Please Contact Us</h1>
-                          <form>
+                    <form id="contactForm" action="https://formspree.io/f/xvgbrvze" method="POST">
+                        <div id="formResponse" class="mb-3" style="display:none;"></div>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -192,6 +193,43 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+// Formspree AJAX submission
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contactForm');
+    var responseDiv = document.getElementById('formResponse');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            responseDiv.style.display = 'none';
+            responseDiv.className = 'mb-3';
+            var formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(function (response) {
+                if (response.ok) {
+                    responseDiv.textContent = 'Thank you! Your message has been sent.';
+                    responseDiv.classList.add('alert', 'alert-success');
+                    responseDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    response.json().then(function (data) {
+                        responseDiv.textContent = data.error || 'Oops! There was a problem submitting your form.';
+                        responseDiv.classList.add('alert', 'alert-danger');
+                        responseDiv.style.display = 'block';
+                    });
+                }
+            }).catch(function () {
+                responseDiv.textContent = 'Oops! There was a problem submitting your form.';
+                responseDiv.classList.add('alert', 'alert-danger');
+                responseDiv.style.display = 'block';
+            });
+        });
+    }
+});
+</script>
 </body>
 
 </html>
