@@ -188,6 +188,10 @@
     .service-item {
         padding: 2rem !important;
     }
+    .row.g-4 > [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 @media (max-width: 767.98px) {
     .service-item {
@@ -198,6 +202,21 @@
     }
     .service-item h4 {
         font-size: 1.2rem !important;
+    }
+    .display-6 {
+        font-size: 1.5rem !important;
+    }
+}
+@media (max-width: 575.98px) {
+    .service-item {
+        padding: 0.8rem !important;
+    }
+    .service-item h4 {
+        font-size: 1rem !important;
+    }
+    .btn {
+        font-size: 0.95rem !important;
+        padding: 0.5rem 1rem !important;
     }
 }
 </style>
