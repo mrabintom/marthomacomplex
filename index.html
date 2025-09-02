@@ -120,6 +120,40 @@
         font-size: 0.95rem;
       }
     }
+
+    /* Unique & Responsive Hero Section Styles */
+    .hero-bg {
+      background: linear-gradient(120deg, #e3f0ff 0%, #f8f9fa 100%), url('img/carousel-1.png') center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero-content {
+      box-shadow: 0 8px 32px 0 rgba(13, 110, 253, 0.08), 0 1.5px 6px 0 rgba(0, 0, 0, 0.04);
+      border-radius: 1.5rem;
+      backdrop-filter: blur(2px);
+      transition: box-shadow 0.3s;
+    }
+
+    .hero-content:hover {
+      box-shadow: 0 12px 40px 0 rgba(13, 110, 253, 0.15), 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-content {
+        padding: 2rem 1rem;
+        border-radius: 1rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content {
+        padding: 1.5rem 0.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -167,22 +201,40 @@
 
   <!-- Hero Section -->
   <div class="container-fluid p-0 mb-5">
-    <div class="row align-items-center text-center text-lg-start" style="min-height: 500px; background: url('img/carousel-1.png') center/cover no-repeat;">
-      <div class="col-lg-6 p-5 bg-white bg-opacity-75 rounded">
-        <h1 class="display-5 text-dark mb-4">Commercial Spaces for Rent at Marthoma Complex</h1>
-        <p class="fs-6 text-body mb-4">
+    <div class="row align-items-center justify-content-center hero-bg" style="min-height: 500px;">
+      <div class="col-lg-7 col-md-10 p-5 bg-white bg-opacity-75 rounded shadow hero-content text-center text-lg-start">
+        <h1 class="display-5 text-dark mb-4 animate__animated animate__fadeInDown">Commercial Spaces for Rent at Marthoma Complex
+        </h1>
+        <p class="fs-6 text-body mb-4 animate__animated animate__fadeIn animate__delay-1s">
           Looking for a prime location to grow your business? Marthoma Complex offers modern, flexible commercial spaces in the heart of Aimury, Koovappady.
           Current tenants include <b>Bake n Bite</b>, <b>Ann's Beauty Parlour</b>, and <b>Super Vision Highspeed Internet</b>.
         </p>
-        <p><b>Address:</b> Marthoma Complex, Aimury, Koovappady P.O, 683544</p>
-        <a href="service.html" class="btn btn-primary px-4 py-2">See Available Spaces</a>
+        <p class="animate__animated animate__fadeIn animate__delay-2s"><b>Address:</b> Marthoma Complex, Aimury, Koovappady P.O, 683544
+        </p>
+        <a href="service.html" class="btn btn-primary px-4 py-2 animate__animated animate__fadeInUp animate__delay-3s">See Available Spaces</a>
       </div>
     </div>
   </div>
 
-  
-
-
+  <script>
+    // Dynamic JS for Hero Section (adds fade-in on scroll if not using Animate.css)
+    document.addEventListener('DOMContentLoaded', function () {
+      var hero = document.querySelector('.hero-content');
+      if (hero && !hero.classList.contains('animate__animated')) {
+        hero.style.opacity = 0;
+        function fadeInHero() {
+          var rect = hero.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            hero.style.transition = 'opacity 1.2s';
+            hero.style.opacity = 1;
+            window.removeEventListener('scroll', fadeInHero);
+          }
+        }
+        window.addEventListener('scroll', fadeInHero);
+        fadeInHero();
+      }
+    });
+  </script>
 
   <!-- Occupiers Section -->
   <div class="container py-5">
@@ -278,7 +330,7 @@
   <!-- Custom Script -->
   <script src="js/main.js"></script>
   <script>
-    // --- Newsletter Subscribe Demo (No backend, just UI feedback) ---
+    // Newsletter Subscribe AJAX
     document.addEventListener('DOMContentLoaded', function () {
       var form = document.getElementById('newsletterForm');
       var email = document.getElementById('newsletterEmail');
@@ -312,8 +364,7 @@
         });
       }
     });
-
-    // Enquiry form feedback
+    // Enquiry form feedback (if you add an enquiry form)
     document.addEventListener('DOMContentLoaded', function () {
       var enquiryForm = document.getElementById('enquiryForm');
       var enquiryMsg = document.getElementById('enquiryMsg');
